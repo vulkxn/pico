@@ -1,0 +1,12 @@
+"character.pico" include
+
+"Hello World"  ;; The string's characters are push onto the stack
+	       ;; and popped as we iterate through the string. They
+	       ;; are automatically terminated with a 0
+
+Loop :
+	** IsAlpha ? puts "Alphabetic" Loop .   ;; Duplicate the character on top and check if alphabetic
+	** IsNumber ? puts "Number" Loop .	;; Duplicate the character on top and check if numeric
+	0 = ? LoopEnd . 			;; Check if character on top is a null char
+LoopEnd :
+	 	
